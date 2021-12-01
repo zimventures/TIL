@@ -1,1 +1,4 @@
-theme: jekyll-theme-midnight
+# Site configuration
+title: TIL
+
+theme: jekyll-theme-hacker

@@ -5,6 +5,6 @@ source "https://rubygems.org"
 git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 
 gem "jekyll", "~> 3.9.0"
-gem "jekyll-theme-midnight", "~> 0.2.0"
+gem "jekyll-theme-hacker", "~> 0.2.0"
 gem "kramdown-parser-gfm", "~> 1.1.0"
 
