@@ -15,7 +15,7 @@ At the end of this tutorial series I'll have setup the guts of the TIL website o
 # Our TODO List
 During each step along the way, a tutorial will be written detailing what I learned.
 
-- [x] [EZ-mode remote development](/GitHubPages/codespaces)
+- [x] [EZ-mode remote development]({{ '/GitHubPages/codespaces' | relative_url }})
 - [ ] Customizing a "stock" GitHub Jekyl theme
 - [ ] Using Liquid to Build a Navigation Menu
 - [ ] Adding a Blog section
