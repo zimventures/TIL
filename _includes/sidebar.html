@@ -1,0 +1,44 @@
+<div class="flex-shrink-0 p-3 bg-white">
+    <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+      <i class="fad fa-home-lg p-3"></i> <span class="fs-5 fw-semibold">le menu</span>
+    </a>
+
+    <ul class="list-unstyled ps-0" style="margin-left: 0;">
+  
+      {% for collection in site.collections %}
+        
+        {% if collection.label != 'posts'%}
+          <li class="mb-1">
+            
+            {% comment %} If the current page matches one of the items in the collection that is being rendered, make sure that the menu is shown opened. {% endcomment %}
+            {% if page.collection == collection.label %}
+              <button class="btn btn-toggle align-items-center rounded" 
+                      data-bs-toggle="collapse" data-bs-target="#{{collection.label}}-collapse" 
+                      aria-expanded="true">
+            {% else %}
+              <button class="btn btn-toggle align-items-center rounded collapsed" 
+                      data-bs-toggle="collapse" data-bs-target="#{{collection.label}}-collapse" 
+                      aria-expanded="false">
+            {% endif %}            
+              {{ collection.label }} {% if collection.fontawesome %}<i class="{{collection.fontawesome}} p-1"></i>{% endif %}
+            </button>
+            
+            <div class="collapse{% if page.collection == collection.label %} show{% endif %}" id="{{collection.label}}-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal" style="margin-left: 0;">
+                
+                {% assign sorted-docs = collection.docs | sort: "order" %}
+
+                {% for doc in sorted-docs %}
+                  <li><a href="{{doc.url}}" class="link-dark rounded">{{doc.title}}</a></li>                
+                {% else %}
+                  <i>Coming Soonish™</i>
+                {% endfor %}
+              </ul>
+            </div>
+          </li>
+        {% endif %}
+      {% endfor %}
+
+      
+    </ul>
+  </div>

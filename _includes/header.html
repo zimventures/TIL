@@ -1,0 +1,14 @@
+<header class="site-header" role="banner">
+
+  <div class="text-start m-5">
+    {%- assign default_paths = site.pages | map: "path" -%}
+    {%- assign page_paths = site.header_pages | default: default_paths -%}
+    <a class="site-title" rel="author" 
+       href="{{ "/" | relative_url }}" style="text-decoration: none;">{{ site.title | escape }}</a>
+
+  </div>
+
+  <div class="text-end m-5">
+    <h1>{% if page.collection %}{{ page.collection }} - {% endif %}{{ page.title }}</h1>
+  </div>
+</header>

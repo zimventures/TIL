@@ -1,4 +1,15 @@
 # Site configuration
 title: TIL
 
-theme: jekyll-theme-hacker
+theme: minima
+
+collections:
+  GitHubPages:
+    output: true
+    permalink: /:collection/:name
+    fontawesome: fab fa-github
+
+  OpenGL:
+    output: true
+    permalink: /:collection/:name
+    fontawesome: fal fa-cube fa-spin
