@@ -280,7 +280,7 @@ directly on the `<ul>` element for the pages.
     {% assign sorted-docs = collection.docs | sort: "order" %}
 
     {% for doc in sorted-docs %}
-      <li><a href="{{doc.url}}" class="link-dark rounded">{{doc.title}}</a></li>                
+      <li><a href="{{doc.url | relative_url}}" class="link-dark rounded">{{doc.title}}</a></li>                
     {% else %}
       <i>Coming Soonish™</i>
     {% endfor %}
