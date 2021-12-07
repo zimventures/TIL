@@ -1,0 +1,51 @@
+---
+layout: default
+---
+
+{% comment %} Show the latest post with cards for the rest of the posts in the pagination page {% endcomment %}
+{% if paginator.page == 1%}
+    <p class="display-1 text-center">Latest Post</p>
+    {% for post in paginator.posts limit:1 %}
+
+        {% if post.header_img %}
+            <img src="{{post.header_img}}" class="card-img-top" alt="...">
+        {% endif %}
+
+        <p class="lead">{{post.title}}</p>
+        <p class="card-text">{{post.excerpt}}</p>
+        <a href="{{ post.url | relative_url }}" class="btn btn-primary text-white">read more...</a>
+
+    {% endfor %}
+
+    <p class="display-4 text-center">Check Out These Other Posts</p>
+
+    {% comment %} Remove the first post since it's the featured one rendered above {% endcomment %}
+    {% assign posts = paginator.posts | shift %}
+
+{% else %}
+    
+    {% comment %} Show all of the posts in the current pagination page {% endcomment %}
+    {% assign posts = paginator.posts %}
+    
+{% endif %}
+
+<div class="row justify-content-center">
+    {% for post in posts %}
+
+        <div class="card col m-3">
+            {% if post.header_img %}
+                <img src="{{post.header_img}}" class="card-img-top" alt="...">
+            {% endif %}
+
+            <div class="card-body">
+                <h5 class="lead">{{post.title}}</h5>
+                <p class="card-text">{{post.excerpt}}</p>
+                <a href="{{ post.url | relative_url }}" class="btn btn-primary text-white">read more...</a>
+            </div>
+        </div>
+
+    {% endfor %}
+</div>
+
+
+{%- include posts_pagination.html -%}

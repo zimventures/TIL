@@ -20,6 +20,4 @@ During each step along the way, a tutorial will be written detailing what I lear
 - [x] [Customizing a "stock" GitHub Jekyl theme]({{ '/GitHubPages/theme-customize' | relative_url }})
 - [x] [Using Liquid to Build a Navigation Menu]({{ '/GitHubPages/navigation-menu' | relative_url }})
 - [x] [Hosting dependencies locally (Bootstrap, jQuery, FontAwesome)]({{ '/GitHubPages/hosting-libraries' | relative_url }})
-- [ ] Adding a Blog section
-- [ ] Adding a "latest posts" section to the landing page
-- [ ] Footer customization (report errata)
+- [x] [Adding a Blog section[({{ '/GitHubPages/blog' | relative_url}})]

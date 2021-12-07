@@ -4,6 +4,12 @@ title: TIL
 theme: minima
 baseurl: /TIL
 
+plugins:
+  - jekyll-paginate
+
+  
+paginate_path: "/blog/page:num/"
+paginate: 3
 
 collections:
   GitHubPages:

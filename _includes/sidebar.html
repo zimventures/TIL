@@ -1,10 +1,11 @@
 <div class="flex-shrink-0 p-3 bg-white">
-    <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+
+    <a href="{{'/' | relative_url }}" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
       <i class="fad fa-home-lg p-3"></i> <span class="fs-5 fw-semibold">le menu</span>
     </a>
 
     <ul class="list-unstyled ps-0" style="margin-left: 0;">
-  
+
       {% for collection in site.collections %}
         
         {% if collection.label != 'posts'%}
@@ -37,8 +38,16 @@
             </div>
           </li>
         {% endif %}
-      {% endfor %}
+      {% endfor %}      
 
-      
     </ul>
+  </div>
+
+  <div class="text-center border-top">
+    latest post
+    <p>
+    {% for post in site.posts limit:1 %}
+      <a href="{{post.url | relative_url}}">{{post.title}}</a>
+    {% endfor %}
+    </p>
   </div>

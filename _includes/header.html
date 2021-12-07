@@ -1,14 +1,25 @@
-<header class="site-header" role="banner">
+<header>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{{ "/" | relative_url }}">[{{ site.title | escape }}]</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <div class="text-start m-5">
-    {%- assign default_paths = site.pages | map: "path" -%}
-    {%- assign page_paths = site.header_pages | default: default_paths -%}
-    <a class="site-title" rel="author" 
-       href="{{ "/" | relative_url }}" style="text-decoration: none;">{{ site.title | escape }}</a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="site-title nav-link" href="{{ '/blog/' | relative_url }}">zim blog</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="d-flex">
+      {% if page.url != "/" %}
+        <div class="display-3">{% if page.collection and page.collection != "posts" %}{{ page.collection }} - {% endif %}{{ page.title }}</div>
+        {% endif %}
+    </div>
 
   </div>
-
-  <div class="text-end m-5">
-    <h1>{% if page.collection %}{{ page.collection }} - {% endif %}{{ page.title }}</h1>
-  </div>
+</nav>
 </header>
