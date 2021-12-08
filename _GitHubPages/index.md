@@ -21,3 +21,4 @@ During each step along the way, a tutorial will be written detailing what I lear
 - [x] [Using Liquid to Build a Navigation Menu]({{ '/GitHubPages/navigation-menu' | relative_url }})
 - [x] [Hosting dependencies locally (Bootstrap, jQuery, FontAwesome)]({{ '/GitHubPages/hosting-libraries' | relative_url }})
 - [x] [Adding a Blog section]({{ '/GitHubPages/blog' | relative_url}})
+- [ ] Adding RSS Support

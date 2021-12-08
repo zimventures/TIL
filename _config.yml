@@ -5,6 +5,7 @@ theme: minima
 
 plugins:
   - jekyll-paginate
+  - jekyll-feed
 
   
 paginate_path: "/blog/page:num/"

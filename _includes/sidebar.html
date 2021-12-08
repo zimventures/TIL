@@ -44,7 +44,7 @@
   </div>
 
   <div class="text-center border-top">
-    latest post
+    latest post <a href="{{'/feed.xml' | relative_url}}" target="_blank"><i class="fad fa-rss"></i></a>
     <p>
     {% for post in site.posts limit:1 %}
       <a href="{{post.url | relative_url}}">{{post.title}}</a>
