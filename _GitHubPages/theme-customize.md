@@ -257,7 +257,7 @@ Configuration file: /workspaces/TIL/_config.yml
 ---
 *Screenshot*
 <p align="center">
-<img src="/assets/images/GitHubPages/hn_footer.png">
+<img src="{{'/assets/images/GitHubPages/hn_footer.png' | relative_url }}">
 </p>
 ---
 

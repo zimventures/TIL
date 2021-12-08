@@ -1,32 +1,29 @@
 
-<footer class="site-footer h-card">
-  
-  <p align="center">
-    Latest HN Top Story: <span id="latest-hn"></span>
-  </p>
+<footer class="site-footer h-card row">  
+  <div class="col">
+    <p align="center">
+      See something that's incorrect? 
+      <br/>
+      <a href="https://github.com/zimventures/TIL/issues/new">
+        File a bug! <i class="fas fa-bug"></i>
+      </a>
+    </p>
+  </div>  
 
-  <p align="center">
-    Happy Coding! 💻 
-  </p>
+  <div class="col">
+    <p align="center">
+      Happy Coding! 💻 
+    </p>
+  </div>
 
-<script type="javascript">
+  <div class="col">
+    <p align="center">
+      Latest HN Top Story
+      <br/>
+      <span id="latest-hn"></span>
+    </p>
+  </div>
 
-  // Don't call this until the page is ready (aka: finished loading)
-  $( document ).ready(function(){
 
-    // First, get a list of all the top stories
-    $.get("https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty", 
-      function(result) {      
-
-        // Fetch the first top story
-        $.get("https://hacker-news.firebaseio.com/v0/item/" + result[0] + ".json?print=pretty", function(data) {
-
-          // With the title and URL in hand, form a link
-          $( "#latest-hn" ).html("<a href=\"" + data.url + "\">" + data.title + "</a>");
-        }); 
-    });
-    
-  });
-</script>
 
 </footer>
