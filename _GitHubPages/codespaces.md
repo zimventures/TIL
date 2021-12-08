@@ -13,7 +13,7 @@ session is as simple as clicking on the "New codespace" button from the "Code" d
 </p>
 
 Out of the box, launching a Codespaces environment will give you a little 4 core machine with 8GB of RAM and 32GB of storage. More than enough for doing basic web development. However, the 
-image that its running won't have all of the software we need in order to develop for our Jekyll site. Rather than installing the software each time we fire up a new Codespace, woudln't it
+image that its running won't have all of the software we need in order to develop for our Jekyll site. Rather than installing the software each time we fire up a new Codespace, wouldn't it
 be great if we could define it all in a Docerkfile and have GitHub use _THAT_ when launching a site? That's exactly what we're going to do in this tutorial. 
 
 Let's get this party started. 🥳
@@ -24,7 +24,7 @@ Fire up a Codespace in your repo.
 ## Setup Dev Container
 
 A great feature of Codespaces is the ["dev containers" functionality](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/configuring-codespaces-for-your-project). 
-When launching a Codespace, GitHub checks the root of your repo for a `.devcontainer` directory. If present, it will use information stored there for the initial buildout of our virtual machine image.
+When launching a Codespace, GitHub checks the root of your repo for a `.devcontainer` directory. If present, it will use information stored there for the initial build out of our virtual machine image.
 Microsoft has an [entire repo](https://github.com/microsoft/vscode-dev-containers) dedicated to pre-build `.devcontainer` configurations, based on your project type. Lucky for us, there is one 
 that already exists for Jekyll. 
 
@@ -128,20 +128,19 @@ Simply close the Codespaces window, navigate back to your repo, and click the "m
 In the list of Codespaces that's shown, we'll click on the menu button "..." and click "Delete". 
 
 <p align="center">
-<img src="/assets/images/GitHubPages/codespaces_delete.png">
+<img src="{{'/assets/images/GitHubPages/codespaces_delete.png' | relative_url}}">
 </p>
 
 Disposable development environments...what a time to be alive. 😅
 
 ### Restart
 After the previous Codespace has been deleted, it's time to fire up a new one. Follow the instructions as before to start one. You'll note that this time will take a few minutes longer. GitHub is
-building the `Dockerfile` that was specified by your `.devcontainer` and running the post build steps (installing our gems). Don't worry though - this build process only happens on the initial spinup 
-of the Codespace. 
+building the `Dockerfile` that was specified by your `.devcontainer` and running the post build steps (installing our gems). Don't worry though - this build process only happens on the initial spin up of the Codespace. 
 
 # Going "live" (on our dev server)
 
 <p align=center>
-<iframe src="https://giphy.com/embed/q7UpJegIZjsk0" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/bill-oreilly-do-it-live-whatwecallconsulting-q7UpJegIZjsk0">via GIPHY</a></p>
+  <iframe src="https://giphy.com/embed/q7UpJegIZjsk0" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 </p>
 
 Now it's the moment of truth. Let's see if we can serve the page from the newly spun up Codespace.

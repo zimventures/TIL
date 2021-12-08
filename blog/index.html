@@ -17,11 +17,12 @@ layout: default
 
     {% endfor %}
 
-    <p class="display-4 text-center">Check Out These Other Posts</p>
-
     {% comment %} Remove the first post since it's the featured one rendered above {% endcomment %}
     {% assign posts = paginator.posts | shift %}
 
+    {% if posts.size != 0%}
+        <p class="display-4 text-center">Check Out These Other Posts</p>
+    {% endif %}
 {% else %}
     
     {% comment %} Show all of the posts in the current pagination page {% endcomment %}
