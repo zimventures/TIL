@@ -9,7 +9,7 @@ $.get("https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty",
     $.get("https://hacker-news.firebaseio.com/v0/item/" + result[0] + ".json?print=pretty", function(data) {
 
         // With the title and URL in hand, form a link
-        $( "#latest-hn" ).html("<a href=\"" + data.url + "\">" + data.title + "</a>");
+        $( "#latest-hn" ).html("<a target=\"_blank\" href=\"" + data.url + "\">" + data.title + "</a>");
     }); 
 });
 
