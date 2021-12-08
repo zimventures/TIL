@@ -5,13 +5,15 @@ layout: default
 {% comment %} Show the latest post with cards for the rest of the posts in the pagination page {% endcomment %}
 {% if paginator.page == 1%}
     <p class="display-1 text-center">Latest Post</p>
+
     {% for post in paginator.posts limit:1 %}
 
-        {% if post.header_img %}
-            <img src="{{post.header_img}}" class="card-img-top" alt="...">
+        {% if post.image %}
+            {% capture header_image %}/assets/images/blog/{{post.image}}{% endcapture %}
+            <img src="{{ header_image | relative_url }}" class="card-img-top" alt="...">
         {% endif %}
 
-        <p class="lead">{{post.title}}</p>
+        <p class="display-2">{{post.title}}</p>
         <p class="card-text">{{post.excerpt}}</p>
         <a href="{{ post.url | relative_url }}" class="btn btn-primary text-white">read more...</a>
 

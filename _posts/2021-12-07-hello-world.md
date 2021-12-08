@@ -2,6 +2,7 @@
 layout: post
 title:  "Hello, World!"
 author: "Rob Zimmerman"
+image: hello_world_header.png
 excerpt_separator: <!--more-->
 ---
 
