@@ -21,7 +21,7 @@
                       data-bs-toggle="collapse" data-bs-target="#{{collection.label}}-collapse" 
                       aria-expanded="false">
             {% endif %}            
-              {{ collection.label }} {% if collection.fontawesome %}<i class="{{collection.fontawesome}} p-1"></i>{% endif %}
+              {{ collection.name }} {% if collection.fontawesome %}<i class="{{collection.fontawesome}} p-1"></i>{% endif %}
             </button>
             
             <div class="collapse{% if page.collection == collection.label %} show{% endif %}" id="{{collection.label}}-collapse">

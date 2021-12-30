@@ -6,18 +6,26 @@ theme: minima
 plugins:
   - jekyll-paginate
   - jekyll-feed
-
+  - jekyll-gist
   
 paginate_path: "/blog/page:num/"
 paginate: 3
 
 collections:
+  CPlusPlus:
+    name: "C++"
+    output: true
+    permalink: /:collection/:name
+    fontawesome: fas fa-brackets-curly
+
   GitHubPages:
+    name: "GitHub Pages"
     output: true
     permalink: /:collection/:name
     fontawesome: fab fa-github
 
   OpenGL:
+    name: "OpenGL"
     output: true
     permalink: /:collection/:name
     fontawesome: fal fa-cube fa-spin
