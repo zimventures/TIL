@@ -107,3 +107,5 @@ And that's it! Go forth...and sprinkle well commented function and method header
 <p align="center">
 <img src='{{"/assets/images/blog/docstring_all_the_things.png" | relative_url }}'/>
 </p>
+
+~Zim
