@@ -18,6 +18,12 @@ collections:
     permalink: /:collection/:name
     fontawesome: fas fa-brackets-curly
 
+  GameMaker:
+    name: "GameMaker"
+    output: true
+    permalink: /:collection/:name
+    fontawesome: fas fa-joystick
+    
   GitHubPages:
     name: "GitHub Pages"
     output: true

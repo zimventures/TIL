@@ -30,7 +30,10 @@
                 {% assign sorted-docs = collection.docs | sort: "order" %}
 
                 {% for doc in sorted-docs %}
-                  <li><a href="{{doc.url | relative_url}}" class="link-dark rounded">{{doc.title}}</a></li>                
+                  {% if doc.nosidebar %}
+                  {% else %}
+                    <li><a href="{{doc.url | relative_url}}" class="link-dark rounded">{{doc.title}}</a></li>  
+                  {% endif %}              
                 {% else %}
                   <i>Coming Soonish™</i>
                 {% endfor %}
