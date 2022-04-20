@@ -37,14 +37,14 @@ What the DDA algorithm gives us is the ability to move along a ray in a unit dir
 # GML Implementation
 For our example, we're going to create a simple function which takes a segment starting point, the segment endpoint, and the ID of a tile map to test against. Throughout this implementation you will see variable names with "ray" in them. While we're technically working with segments, "ray" just fits nicer as a variable! 
 
-```gml
+```cpp
 function TileRaycast(_x, _y, _rx, _ry, _map)
 ```
 
 
 The return value from this function is a structure with information about the search operation
 
-```gml
+```cpp
 return {
 	Found: tileFound,
 	X: _endX,
@@ -68,7 +68,7 @@ return {
 
 ## Implementation
 
-```gml
+```cpp
 function TileRayCast(_x, _y, _rx, _ry, _map) {
 		
 	// The assumption here is that tiles are always square!
@@ -179,31 +179,31 @@ function TileRayCast(_x, _y, _rx, _ry, _map) {
 Let's do a quick rundown of what the function is doing and dive into some of the more non-intuitive sections.
 
 First thing first - figure out how big the tiles are. ASSUMPTION ALERT: tiles are assumed to be square.
-```gml
+```cpp
 var _tile_size = tilemap_get_tile_width(_map);
 ```
 
 Figure out the direction (positive or negative) for each axis of the segment, as well as its length.
-```gml
+```cpp
 var _rayDirectionX = _rx - _x;
 var _rayDirectionY = _ry - _y;
 var _rayLength = sqrt((_rayDirectionX * _rayDirectionX) + (_rayDirectionY * _rayDirectionY));
 ```
 
 Normalize each axis.
-```gml
+```cpp
 var _rayDirectionXNorm = _rayDirectionX / _rayLength;
 var _rayDirectionYNorm = _rayDirectionY / _rayLength;
 ```
 
 Calculate the ray step size (in tile integer space) on each axis
-```gml
+```cpp
 var _rayStepSizeX = sqrt(1.0 + (_rayDirectionYNorm / _rayDirectionXNorm) * (_rayDirectionYNorm / _rayDirectionXNorm));
 var _rayStepSizeY = sqrt(1.0 + (_rayDirectionXNorm / _rayDirectionYNorm) * (_rayDirectionXNorm / _rayDirectionYNorm));	
 ```
 
 Define some temporary variables that will be used within the main loop
-```gml
+```cpp
 // Determines in which direction in the tile map the algorightm will step.
 // Left = -1 | Right = 1 | Up = -1 | Down = 1
 var _stepX, _stepY;
@@ -230,7 +230,7 @@ var _totalSteps = 0;
 ```
 
 The next part determines the initial step direction and ray length. Remember, each step only moves on a single axis. In addition, the initial segment length is set so that the loop always starts on the edge of a tile. 
-```gml
+```cpp
 if(_rayDirectionXNorm < 0) {
 	_stepX = -1;
 	_rayLengthX = (_x - (_mapCheckX * _tile_size)) / _tile_size * _rayStepSizeX;	
@@ -255,7 +255,7 @@ At this point, it's time to begin the main loop of the algorithm. Each iteration
 Now let's enter the loop...
 
 Advance the current distance on whichever axis is shorter. Remember, `_mapCheckX/Y` tracks the tile index, in integer space.
-```gml
+```cpp
 if(_rayLengthX < _rayLengthY) {
 	_mapCheckX += _stepX;
 	
@@ -270,21 +270,21 @@ if(_rayLengthX < _rayLengthY) {
 ```
 
 In case the next step moves us past the maximum distance - bail! 
-```gml
+```cpp
 if(currentDistance >= maxDistance) {
 	currentDistance = maxDistance;
 	break;
 }
 ```
 Check the tile map at the current location to see if there is a tile defined
-```gml
+```cpp
 if(tilemap_get(_map, _mapCheckX, _mapCheckY)) {
 	tileFound = true;		
 } 
 ```
 
 Lastly, keep track of the number of steps that we've iterated through
-```gml
+```cpp
 _totalSteps++;
 ```
 
@@ -292,14 +292,14 @@ With the main loop complete, there is some housekeeping items to perform after t
 
 Translate the final end point from tile space into pixel space. 
 
-```gml
+```cpp
 // Translate the line end point from tile space into pixel coordinate space
 var _endX = _x + (_rayDirectionXNorm * (currentDistance * _tile_size));
 var _endY = _y + (_rayDirectionYNorm * (currentDistance * _tile_size));
 ```
 
 Return our findings to the caller!
-```gml
+```cpp
 return {
 	Found: tileFound,
 	X: _endX,
@@ -319,7 +319,7 @@ Of course, being able to visually see what is happening with the algorithm is on
 - circle outline where an intersection with an existing tile occur
 
 
-```gml
+```cpp
 function TileRayCastDebug(_x, _y, _rx, _ry, _map) {
 	
 	// _x, _y, _rx, _ry, and _map will be passed into the function	
