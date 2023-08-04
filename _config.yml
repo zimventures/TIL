@@ -7,7 +7,7 @@ plugins:
   - jekyll-paginate
   - jekyll-feed
   - jekyll-gist
-  
+
 paginate_path: "/blog/page:num/"
 paginate: 3
 
@@ -23,15 +23,15 @@ collections:
     output: true
     permalink: /:collection/:name
     fontawesome: fas fa-joystick
-    
+
   GitHubPages:
     name: "GitHub Pages"
     output: true
     permalink: /:collection/:name
     fontawesome: fab fa-github
 
-  OpenGL:
-    name: "OpenGL"
+  Godot:
+    name: "Godot"
     output: true
     permalink: /:collection/:name
     fontawesome: fal fa-cube fa-spin
