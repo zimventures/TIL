@@ -26,7 +26,7 @@ Stackzilla is "an application ORM for Python developers. tldr; it's Terraform on
 
 In the back of my head there are plans to make a commercial SaaS offering. For now, however, it's available for everyone as a free open-source tool.
 
-## Zim's Word Game
+## [Zim's Word Game](https://zimventures.com/zims-word-game/)
 After a 4 year game development hiatus - *we're back baby*! Holy hell is game development fun. During a recent conversation with a co-worker I made the claim that game *development* was just as fun as game *playing*. Crazy, right?
 
 The next game development project served a few purposes:
