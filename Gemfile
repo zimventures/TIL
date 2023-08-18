@@ -11,3 +11,5 @@ gem "kramdown-parser-gfm", "~> 1.1.0"
 gem "minima", "~> 2.5.1"
 gem "jekyll-feed", "~> 0.15.1"
 gem "jekyll-gist", "~> 1.5.0"
+
+gem "webrick", "~> 1.8"

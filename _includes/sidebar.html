@@ -7,33 +7,33 @@
     <ul class="list-unstyled ps-0" style="margin-left: 0;">
 
       {% for collection in site.collections %}
-        
+
         {% if collection.label != 'posts'%}
           <li class="mb-1">
-            
+
             {% comment %} If the current page matches one of the items in the collection that is being rendered, make sure that the menu is shown opened. {% endcomment %}
             {% if page.collection == collection.label %}
-              <button class="btn btn-toggle align-items-center rounded" 
-                      data-bs-toggle="collapse" data-bs-target="#{{collection.label}}-collapse" 
+              <button class="btn btn-toggle align-items-center rounded"
+                      data-bs-toggle="collapse" data-bs-target="#{{collection.label}}-collapse"
                       aria-expanded="true">
             {% else %}
-              <button class="btn btn-toggle align-items-center rounded collapsed" 
-                      data-bs-toggle="collapse" data-bs-target="#{{collection.label}}-collapse" 
+              <button class="btn btn-toggle align-items-center rounded collapsed"
+                      data-bs-toggle="collapse" data-bs-target="#{{collection.label}}-collapse"
                       aria-expanded="false">
-            {% endif %}            
-              {{ collection.name }} {% if collection.fontawesome %}<i class="{{collection.fontawesome}} p-1"></i>{% endif %}
+            {% endif %}
+              {% if collection.icon %}{{collection.icon}}{% endif %} {{ collection.name }}
             </button>
-            
+
             <div class="collapse{% if page.collection == collection.label %} show{% endif %}" id="{{collection.label}}-collapse">
               <ul class="btn-toggle-nav list-unstyled fw-normal" style="margin-left: 0;">
-                
+
                 {% assign sorted-docs = collection.docs | sort: "order" %}
 
                 {% for doc in sorted-docs %}
                   {% if doc.nosidebar %}
                   {% else %}
-                    <li><a href="{{doc.url | relative_url}}" class="link-dark rounded">{{doc.title}}</a></li>  
-                  {% endif %}              
+                    <li><a href="{{doc.url | relative_url}}" class="link-dark rounded">{{doc.title}}</a></li>
+                  {% endif %}
                 {% else %}
                   <i>Coming Soonish™</i>
                 {% endfor %}
@@ -41,7 +41,7 @@
             </div>
           </li>
         {% endif %}
-      {% endfor %}      
+      {% endfor %}
 
     </ul>
   </div>

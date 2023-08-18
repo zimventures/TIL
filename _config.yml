@@ -16,22 +16,22 @@ collections:
     name: "C++"
     output: true
     permalink: /:collection/:name
-    fontawesome: fas fa-brackets-curly
+    icon: <i class="fas fa-brackets-curly p-1"></i>
 
   GameMaker:
     name: "GameMaker"
     output: true
     permalink: /:collection/:name
-    fontawesome: fas fa-joystick
+    icon: <i class="fas fa-joystick p-1"></i>
 
   GitHubPages:
     name: "GitHub Pages"
     output: true
     permalink: /:collection/:name
-    fontawesome: fab fa-github
+    icon: <i class="fab fa-github p-1"></i>
 
   Godot:
     name: "Godot"
     output: true
     permalink: /:collection/:name
-    fontawesome: fal fa-cube fa-spin
+    icon: <img src="/assets/godot/icon.svg" class="p-1" alt="Godot logo" width="40" height="40">
